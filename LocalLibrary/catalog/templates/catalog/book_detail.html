@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {%block title%}
-    <title>Course Detail</title>
+    <title>Book Detail</title>
 {%endblock%}
 
 {% block content %}
@@ -10,7 +10,7 @@
             <h5 class="card-header">{{book.title}}</h5>
             <div class="card-body">
             <p class="card-text"><b>ISBN:</b> {{book.isbn}}</p>
-            <p class="card-text"><b>Author:</b> <a href="{% comment %} {% url book.author.get_absolute_url %}{% endcomment %}">{{book.author}}</a></p> 
+            <p class="card-text"><b>Author:</b> <a href="{{ book.author.get_absolute_url }}">{{book.author}}</a></p> 
             <p class="card-text"><b>Genre:</b> {{book.genre.all|join:", "}}</p>
             <p class="card-text"><b>Summary:</b> {{book.summary}}</p>
             </div>
