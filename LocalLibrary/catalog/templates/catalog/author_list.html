@@ -8,11 +8,13 @@
   <ul>
 
   {% for author in author_list %}
-    <li>
-      <a href="{{ author.get_absolute_url }}">
-      {{ author }} ({{author.date_of_birth}} - {% if author.date_of_death %}{{author.date_of_death}}{% endif %})
-      </a>
-    </li>
+    <div class="card w-75">
+        <h5 class="card-header"><a href="{{ author.get_absolute_url }}">{{author.last_name}}, {{author.first_name}}</a></h5>
+        <div class="card-body">
+        <p class="card-text"><b>Date of Birth:</b> {{author.date_of_birth}}</p>
+        <p class="card-text"><b>Date of Death:</b> {{author.date_of_death}}</p> 
+        </div>
+    </div>
   {% endfor %}
 
  </ul>

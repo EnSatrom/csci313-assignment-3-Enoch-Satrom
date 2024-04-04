@@ -5,10 +5,13 @@
   {% if book_list %}
     <ul>
       {% for book in book_list %}
-      <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
-        ({{book.author}})
-      </li>
+        <div class="card w-75">
+          <h5 class="card-header"><a href="{{ book.get_absolute_url }}">{{book.title}}</a></h5>
+          <div class="card-body">
+          <p class="card-text"><b>Author:</b> <a href="{{book.author.get_absolute_url}}">{{book.author}}</a></p>
+          <p class="card-text"><b>Genre:</b> {{book.genre.all|join:", "}}</p>
+          </div>
+        </div>
       {% endfor %}
     </ul>
   {% else %}
